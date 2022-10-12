@@ -25,4 +25,10 @@ public class DeleteMeetingCommandParserTest {
                 " i/a",
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteMeetingCommand.MESSAGE_USAGE));
     }
+
+    @Test
+    public void parse_missingPrefix_throwsParseException() {
+        assertParseFailure(parser, "1",
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteMeetingCommand.MESSAGE_USAGE));
+    }
 }
